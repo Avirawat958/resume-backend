@@ -15,7 +15,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
+@app.get("/")
+async def home():
+    return {"status": "Success", "message": "AI Resume Engine is running perfectly!"}
 class OptimizationRequest(BaseModel):
     resume_text: str
     job_description: str
